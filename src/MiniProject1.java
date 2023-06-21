@@ -12,7 +12,7 @@ Scanner escaneador = new Scanner(System.in);
         if (escolhaCap1.toLowerCase().equals("escudo")) {
             cap1Altern1();
             String escolhaCapAltern1 = escaneador.nextLine();
-
+            
             // GAME OVER of Chapter 1.1 -------------------------------------
             if (escolhaCapAltern1.toLowerCase().equals("tornado")) {
                 cap1Altern12();
@@ -21,15 +21,14 @@ Scanner escaneador = new Scanner(System.in);
             // Player wins the game --------------------------------------------
             else if (escolhaCapAltern1.toLowerCase().equals("salto")) {
                 cap1Altern3();
-            }     
             }
-
+        }
         // GAME OVER of Chapter 1 -----------------------------------------
-        else if (escolhaCap1.toLowerCase().equals("desviar")){
-            cap1Altern2();
-        }
+        else if (escolhaCap1.toLowerCase().equals("desviar")) {
+            cap1Altern13();
+            }
         escaneador.close();
-        }
+    }
 
 // History Methods ----------------------------------------------------------------------------
 
@@ -48,21 +47,20 @@ Scanner escaneador = new Scanner(System.in);
     }
 
     // Chapter 1 - Game Over       
-    private static void cap1Altern2() {
-        
-        System.out.println("\n~ Você tenta desviar rapidamente, mas não percebeu que " +
-        "havia um campo gravitacional sobre você! Um campo gravitacional só poderia significar uma coisa: " +
-        "Navi, o Manipulador da Física!\n\n" +
-        "{Navi pode alterar a força da gravidade ao seu redor. Ele pode levitar objetos pesados " +
-        "com facilidade ou criar campos gravitacionais intensos para atrair ou repelir qualquer coisa em seu alcance.}\n\n" +
-        "{Navi possui a habilidade de Controle Cinético e Mecânico. Ele pode aumentar ou diminuir a velocidade de objetos, " +
-        "além de ser capaz de aplicar forças com determinados valores de Newton(Força).}\n\n" +
-        "{Navi possui habilidades reduzidas e não possui controle absoluto das leis da Física.}\n\n" +
-        "Não há mais espaço para pensar, pois bem na sua frente está uma bola de aço gigante, " +
-        "flutuando a 150m/s\n.\n.\n.\nFerrou.\n\n" +
-        "G A M E  O V E R\n");
-    } 
-
+    private static void cap1Altern13() {
+            
+    System.out.println("\n~ Você tenta desviar rapidamente, mas não percebeu que " +
+    "havia um campo gravitacional sobre você! Um campo gravitacional só poderia significar uma coisa: " +
+    "Navi, o Manipulador da Física!\n\n" +
+    "{Navi pode alterar a força da gravidade ao seu redor. Ele pode levitar objetos pesados " +
+    "com facilidade ou criar campos gravitacionais intensos para atrair ou repelir qualquer coisa em seu alcance.}\n\n" +
+    "{Navi possui a habilidade de Controle Cinético e Mecânico. Ele pode aumentar ou diminuir a velocidade de objetos, " +
+    "além de ser capaz de aplicar forças com determinados valores de Newton(Força).}\n\n" +
+    "{Navi possui habilidades reduzidas e não possui controle absoluto das leis da Física.}\n\n" +
+    "Não há mais espaço para pensar, pois bem na sua frente está uma bola de aço gigante, " +
+    "flutuando a 150m/s\n.\n.\n.\nFerrou.\n\n" +
+    "G A M E  O V E R\n");
+    }
     // Chapter 1.1
     private static void cap1Altern1() {
         
