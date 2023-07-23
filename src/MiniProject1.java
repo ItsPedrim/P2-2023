@@ -1,11 +1,9 @@
-import java.util.Scanner;
 
 public class MiniProject1 {
     public static void main(String[] args) throws Exception {
     
-Scanner escaneador = new Scanner(System.in);
     
-    // Character Creation --------------------------------
+    // Character Creation ---------------------------------
 
     ClassePersonagem personagem1 = new ClassePersonagem(
         "Player",
@@ -16,69 +14,30 @@ Scanner escaneador = new Scanner(System.in);
         "Navi",
          100,
           "Manipulador");
+          
+    
+    // Chapter Creation -------------------------------------------------------------------------------
+    
+    ClasseCapitulo capitulo1 = new ClasseCapitulo("Chapter 1",
 
-    // Prints out chapter 1 ------------------------
-    cap1();
-    System.out.println("\n{<3 Pontos de Vida: " + personagem1.vida + "}");
-
-        String escolhaCap1 = escaneador.nextLine();
-
-        // Chapter 1.1 --------------------------------------------
-        if (escolhaCap1.toLowerCase().equals("escudo")) {
-            cap1Altern1();
-            personagem1.vida -= 50;
-            System.out.println("\n{<3 Pontos de Vida: " + personagem1.vida + "}");
-            System.out.println("\n{<3 Pontos de Vida de Navi: " + personagem2.vida + "}");
-            String escolhaCapAltern1 = escaneador.nextLine();
-            
-            // GAME OVER of Chapter 1.1 -------------------------------------
-            if (escolhaCapAltern1.toLowerCase().equals("tornado")) {
-                cap1Altern12();
-                personagem1.vida -= 50;
-                System.out.println("\n{<3 Pontos de Vida de Navi: " + personagem2.vida + "}");
-                System.out.println("\n{<3 Pontos de Vida: " + personagem1.vida + "}");
-            }
-
-            // Player wins the game --------------------------------------------
-            else if (escolhaCapAltern1.toLowerCase().equals("salto")) {
-                cap1Altern3();
-                personagem1.vida -= 10;
-                personagem2.vida -= 100;
-                System.out.println("\n{<3 Pontos de Vida: " + personagem1.vida + "}");
-                System.out.println("\n{<3 Pontos de Vida de Navi: " + personagem2.vida + "}");
-            }
-        }
-        // GAME OVER of Chapter 1 -----------------------------------------
-        else if (escolhaCap1.toLowerCase().equals("desviar")) {
-            cap1Altern13();
-            personagem1.vida -= 100;
-            System.out.println("\n{<3 Pontos de Vida: " + personagem1.vida + "}");
-            System.out.println("\n{<3 Pontos de Vida de Navi: " + personagem2.vida + "}");
-            }
-
-        escaneador.close();
-    }
-
-// History Methods ----------------------------------------------------------------------------
-        
-        // Chapter 1
-        private static void cap1() {
-            
-            System.out.println("Capítulo I - Eis o Manipulador da Física!\n\n" +
+     "Capítulo I - Eis o Manipulador da Física!\n\n" +
             "~ Após andar de ponta cabeça sobre labirintos no teto e fugir de armadilhas " +
             "sobre as paredes, correndo paralelamente ao solo, você finalmenete " + 
             " escapa das câmaras com alternação de gravidade!\n\n" +
             " Você se encontra agora em uma câmara completamente branca e vazia. " +
             "De repente, você ouve passos ecoando sobre a câmara.\n.\n.\n.\n" +
-            "Você sente algo! Atrás de você, algo se aproxima em alta velocidade! O que você faz?\n\n" +
-            "Digite: Escudo / Desviar");
+            "Você sente algo! Atrás de você, algo se aproxima em alta velocidade! O que você faz?\n\n",
 
-        }
-
-        // Chapter 1 - Game Over       
-        private static void cap1Altern13() {
-
-            System.out.println("\n~ Você tenta desviar rapidamente, mas não percebeu que " +
+            personagem1,
+            personagem2,
+            "escudo",
+            "desviar",
+            0
+            );
+    
+    ClasseCapitulo capitulo1Altern1 = new ClasseCapitulo("Chapter 1.2",
+    
+            "\nVocê tenta desviar rapidamente, mas não percebeu que " +
             "havia um campo gravitacional sobre você! Um campo gravitacional só poderia significar uma coisa: " +
             "Navi, o Manipulador da Física!\n\n" +
             "{Navi pode alterar a força da gravidade ao seu redor. Ele pode levitar objetos pesados " +
@@ -88,12 +47,18 @@ Scanner escaneador = new Scanner(System.in);
             "{Navi possui habilidades reduzidas e não possui controle absoluto das leis da Física.}\n\n" +
             "Não há mais espaço para pensar, pois bem na sua frente está uma bola de aço gigante, " +
             "flutuando a 150m/s\n.\n.\n.\nFerrou.\n\n" +
-            "G A M E  O V E R");
-        }
-        // Chapter 1.1
-        private static void cap1Altern1() {
+            "G A M E  O V E R",
             
-            System.out.println("\n~ Você usa seu escudo e, com o impacto, é empurrado para longe até bater contra a parede! " +
+            personagem1,
+            personagem2,
+            null,
+            null,
+            100
+            );
+    
+    ClasseCapitulo capitulo1Altern2 = new ClasseCapitulo("Chapter 1.3", 
+
+            "\nVocê usa seu escudo e, com o impacto, é empurrado para longe até bater contra a parede! " +
             "Um pouco desnorteado após o impacto, você observa o objeto que havia te acertado: Uma enorme bola maciça de metal! " +
             "Então, ao olhar na direção em que a bola foi lançada, você observa um ser. É como se aquela presença preenchesse " +
             "todo o vazio daquela câmara. Logo você o reconheceu: Navi, o Manipulador da Física!\n\n" +
@@ -106,32 +71,96 @@ Scanner escaneador = new Scanner(System.in);
             "aumentando, assim, sua velocidade drasticamente. É uma verdadeira arma poderosa!" +
             "Mas ainda não acabou!(Insert música de batalha épica here) Rapidamente, Navi cria um campo gravitacional" +
             "sobre você e atrai mais bolas de aços em sua direção. Você pode usar um Super-Salto-Carregado ou " +
-            "usar um Super-Tornado ao redor de si! O que você faz?\n\n" +
-            "Digite: Tornado / Salto");
+            "usar um Super-Tornado ao redor de si! O que você faz?",
 
-        }
-
-
-        // Chapter 1.1 - Game Over 
-        private static void cap1Altern12() {
+            personagem1,
+            personagem2,
+            "tornado",
+            "salto",
+            50
+            );
+    
+    ClasseCapitulo capitulo1Altern3 = new ClasseCapitulo("Chapter 1.4", 
             
-            System.out.println("\n~ Você resolve formar um Super-Tornado! O poder dos ventos flui ao seu redor " +
+            "\nVocê resolve formar um Super-Tornado! O poder dos ventos flui ao seu redor " +
             "e então... cessa rapidamente, pois o campo gravitacional sobre você bagunça todas as partículas de ar. " +
             "Além disso, talvez vento não fosse a melhor opção contra bolas de aço gigantes em alta velocidade...\n\n" +
-            "G A M E  O V E R");
-        }
+            "G A M E  O V E R", 
+            personagem1,
+            personagem2,
+            null,
+            null,
+            100
+            );
 
-        // Chapter 1.1 - Win
-        private static void cap1Altern3() {
-
-            System.out.println("\n~ Você usa o Super-Salto-Carregado! Uma habilidade poderosa, que foi capaz de " +
+    ClasseCapitulo capitulo1Altern4 = new ClasseCapitulo("Chapter 1.5",
+            
+            "\nVocê usa o Super-Salto-Carregado! Uma habilidade poderosa, que foi capaz de " +
             "ultrapassar a força do campo gravitacional! Você salta sobre as bolas de aço, que se chocam entre em si. " +
             "No entanto, você não havia calculado que o Super-Salto-Carregado concentraria tanto poder! " +
             "Você agora está subindo em alta velocidade em direção ao teto da câmara. \n\nPOW! " +
             "Você dá de cabeça no teto da câmara! O impacto foi tão forte que fez o teto rachar e começar a cair! " +
             "Um pedaço de teto gigante cai e... POW! Acerta em cheio Navi, o Manipulador da Física, que é esmagado " +
-            "num piscar de olhos!\n\nV O C Ê  V E N C E U !");
-        }
+            "num piscar de olhos!\n\nV O C Ê  V E N C E U !", 
+            personagem1,
+            personagem2,
+            null,
+            null,
+            100
+            );
         
-    
+
+        System.out.println(capitulo1.texto);
+        
+        System.out.println(
+        
+        "--> " + capitulo1.escolha1 +
+        "\n--> " + capitulo1.escolha2
+
+        );
+
+        int escolha1 = capitulo1.escolher();
+        
+        
+        if (escolha1 == 1) {
+                
+                System.out.println(capitulo1Altern2.texto);
+
+                personagem1.vida -= capitulo1Altern2.alteracaoEnergia;
+                
+                System.out.println(
+
+                "\n--> " + capitulo1Altern2.escolha1 +
+                "\n--> " + capitulo1Altern2.escolha2
+                
+                );
+                
+                int escolhaAltern2 = capitulo1Altern2.escolher();
+
+
+                if (escolhaAltern2 == 1) {
+                        
+                System.out.println(capitulo1Altern3.texto);
+                personagem1.vida -= capitulo1Altern3.alteracaoEnergia;
+
+                }
+                
+                else if (escolhaAltern2 == 2) {
+
+                System.out.println(capitulo1Altern4.texto);
+                personagem2.vida -= capitulo1Altern4.alteracaoEnergia;
+
+                }
+        }
+
+        else if (escolha1 == 2) {
+
+        System.out.println(capitulo1Altern1.texto);
+        personagem1.vida -= capitulo1Altern1.alteracaoEnergia;
+
+        }
+
+        capitulo1.mostrar();
+}
+
 } 
