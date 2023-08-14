@@ -4,8 +4,7 @@ public class ClasseCapitulo {
 
     String nome;
     String texto;
-    String escolha1;
-    String escolha2;
+    String[] escolhas;
     int alteracaoEnergia;
     ClassePersonagem personagem1;
     ClassePersonagem personagem2;
@@ -16,10 +15,9 @@ public class ClasseCapitulo {
         
         String nome,
         String texto,
-        ClassePersonagem personagem,
+        ClassePersonagem personagem1,
         ClassePersonagem personagem2,
-        String escolha1,
-        String escolha2,
+        String[] escolhas,
         int alteracaoEnergia
         
         )
@@ -27,10 +25,11 @@ public class ClasseCapitulo {
     {
         this.nome = nome;
         this.texto = texto;
-        this.escolha1 = escolha1;
-        this.escolha2 = escolha2;
         this.alteracaoEnergia = alteracaoEnergia;
+        this.escolhas = escolhas;
     }
+
+
 
     public void mostrar() {
 
@@ -38,8 +37,8 @@ public class ClasseCapitulo {
 
             "\nChapter's name: " + nome +
             "\nChapter text: " + texto +
-            "\nEscolha 1: " + escolha1 +
-            "\nEscolha 2: " + escolha2
+            "\nEscolhas:\n-> " + escolhas[0] +
+            "\n-> " + escolhas[1]
             
             );
             
@@ -54,17 +53,19 @@ public class ClasseCapitulo {
         
         String escolha = escaneador.nextLine();
         
-        
-        if (escolha.toLowerCase().equals(escolha1)) {
+        int retorno = 0;
+
+        for (int i = 0; i < escolhas.length; i++){
             
-            return 1;
+            if (escolha.toLowerCase().equals(escolhas[i].toLowerCase())) {
+
+            retorno = i;
+            }
+
         }
-        else if (escolha.toLowerCase().equals(escolha2)) {
-            
-            return 2;
-        }
-        else {
-            return 0;
-        }
+
+    return retorno;
+
     }   
+
 }

@@ -13,9 +13,9 @@ public class MiniProject1 {
     ClassePersonagem personagem2 = new ClassePersonagem(
         "Navi",
          100,
-          "Manipulador");
-          
+          "Manipulador");    
     
+
     // Chapter Creation -------------------------------------------------------------------------------
     
     ClasseCapitulo capitulo1 = new ClasseCapitulo("Chapter 1",
@@ -29,9 +29,7 @@ public class MiniProject1 {
             "Você sente algo! Atrás de você, algo se aproxima em alta velocidade! O que você faz?\n\n",
 
             personagem1,
-            personagem2,
-            "escudo",
-            "desviar",
+            personagem2, new String[]{"Escudo", "Desviar"},
             0
             );
     
@@ -49,12 +47,11 @@ public class MiniProject1 {
             "flutuando a 150m/s\n.\n.\n.\nFerrou.\n\n" +
             "G A M E  O V E R",
             
-            personagem1,
-            personagem2,
-            null,
-            null,
-            100
-            );
+        personagem1,
+        personagem2,
+        null,
+        100
+        );
     
     ClasseCapitulo capitulo1Altern2 = new ClasseCapitulo("Chapter 1.3", 
 
@@ -75,8 +72,7 @@ public class MiniProject1 {
 
             personagem1,
             personagem2,
-            "tornado",
-            "salto",
+            new String[]{"Tornado", "Salto"},
             50
             );
     
@@ -88,7 +84,6 @@ public class MiniProject1 {
             "G A M E  O V E R", 
             personagem1,
             personagem2,
-            null,
             null,
             100
             );
@@ -105,24 +100,25 @@ public class MiniProject1 {
             personagem1,
             personagem2,
             null,
-            null,
             100
             );
         
+
+// Main Code Execution --------------------------------------------------------------------------------
 
         System.out.println(capitulo1.texto);
         
         System.out.println(
         
-        "--> " + capitulo1.escolha1 +
-        "\n--> " + capitulo1.escolha2
+        "--> " + capitulo1.escolhas[0] +
+        "\n--> " + capitulo1.escolhas[1]
 
         );
 
         int escolha1 = capitulo1.escolher();
         
         
-        if (escolha1 == 1) {
+        if (escolha1 == 0) {
                 
                 System.out.println(capitulo1Altern2.texto);
 
@@ -130,22 +126,22 @@ public class MiniProject1 {
                 
                 System.out.println(
 
-                "\n--> " + capitulo1Altern2.escolha1 +
-                "\n--> " + capitulo1Altern2.escolha2
+                "\n--> " + capitulo1Altern2.escolhas[0] +
+                "\n--> " + capitulo1Altern2.escolhas[1]
                 
                 );
                 
                 int escolhaAltern2 = capitulo1Altern2.escolher();
 
 
-                if (escolhaAltern2 == 1) {
+                if (escolhaAltern2 == 0) {
                         
                 System.out.println(capitulo1Altern3.texto);
                 personagem1.vida -= capitulo1Altern3.alteracaoEnergia;
 
                 }
                 
-                else if (escolhaAltern2 == 2) {
+                else if (escolhaAltern2 == 1) {
 
                 System.out.println(capitulo1Altern4.texto);
                 personagem2.vida -= capitulo1Altern4.alteracaoEnergia;
@@ -153,14 +149,15 @@ public class MiniProject1 {
                 }
         }
 
-        else if (escolha1 == 2) {
+        else if (escolha1 == 1) {
 
         System.out.println(capitulo1Altern1.texto);
         personagem1.vida -= capitulo1Altern1.alteracaoEnergia;
 
         }
 
-        capitulo1.mostrar();
+capitulo1.mostrar();
+
 }
 
 } 
